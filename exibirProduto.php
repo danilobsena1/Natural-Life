@@ -8,14 +8,25 @@ include('conexao.php');
 
 echo"<a href='home.html'>Home</a> | <a href='cadastro.html'>Cadastrar Produto</a><br/><br/>";
 
-
 $produto = $_POST['nome'];
+
+$buscar = $_POST['Buscar'];
+
+if (isset($buscar)) {
 
 $sql = "SELECT * FROM produtos WHERE nome = '$produto'";
 
 $resultado = mysqli_query($conexao, $sql) or die ("Erro na consulta!");
 
-while($registro = mysqli_fetch_array($resultado)){
+if (mysqli_num_rows($resultado)<=0){
+    echo"<script language='javascript' type='text/javascript'>
+        alert('Produto indisponivel');window.location
+        .href='home.html';</script>";
+        die();
+    }
+    else{
+
+while($registro = mysqli_fetch_array($resultado)){ // mysqli_fetch_array = permite obter os resultados de uma consulta sql.
     $idProduto = $registro['idProduto'];
     $nome = $registro['nome'];
     $preco = $registro['preco'];
@@ -39,9 +50,11 @@ while($registro = mysqli_fetch_array($resultado)){
         ."<td>$quantidade</td>"
         ."<td>$validade</td>"
      ."</tr>";
-}
 
-echo "</table>";
+     }
+    }
+  } 
+
+ echo "</table>";
 
 ?>
-   
