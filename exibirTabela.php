@@ -1,17 +1,18 @@
 <style type="text/css">
-            a { 
-                text-decoration: none; 
-            }
-            body {
+
+        a { 
+            text-decoration: none; 
+        }
+
+        body {
 		    background-image: url('images/pexels-lukas-349610.jpg');
 		    /* Foto de Lukas no Pexels */
             background-size: cover;
         }
-            #menu {
-    	    /* background: #12181F; */
+
+        #menu {
     	    background: #4AAE4A;
     	    padding: 16px;
- 	   	    /* margin: auto;    */
         }
          	   
 </style>
@@ -28,8 +29,6 @@ error_reporting(E_ALL);
 
 include('conexao.php');
 
-// echo "<a href='home.html'>Home</a> | <a href='cadastro.html'>Cadastrar Produto</a> <br><br>";
-
         $sql = "SELECT * FROM produtos";
         $resultado = mysqli_query($conexao, $sql) or die ("Erro na consulta!");
 
@@ -40,9 +39,7 @@ include('conexao.php');
             $nome = $registro['nome'];
             $preco = $registro['preco'];
             $quantidade = $registro['quantidade'];
-            $validade = $registro['validade'];
-
-            // echo "<br>";   
+            $validade = $registro['validade']; 
 
             echo"<table border='2' cellpadding=10>";
             echo"<tr><th>Nome</th>"
