@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Cadastro  de Produto</title>
+        <link rel="shortcut icon" href="images/icon.png">
+        <style type="text/css">
+            body {
+                background-image: url('images/pexels-lukas.jpg');
+                background-size: cover;
+            }
+
+            #menu {
+                /* background: #12181F; */
+                background: #4AAE4A;
+                /* width: 910px; */
+                padding: 16px;
+                /* margin: auto;    */
+            }
+            a { 
+                color: #FFFFFF;
+                text-decoration: none; /* Remove os sublinhados dos hiperlinks */
+                padding: 5px;
+            }
+            /* textarea {
+                resize: none;
+            } */
+
+            form{
+				margin: 3 auto;
+				width: 310px;
+				padding: 1em;
+				border: 2px solid #4AAE4A;
+				/* border-radius: 2em; */
+			}
+
+        </style>
+    </head>
+    <body>
+        <div id="menu">
+            <a href="home.html">Home</a> <a href="cadastro.html">Cadastrar Produto</a>
+        </div>
+        <form action="processa.php" method="post">
+            <h3>Insira as Informações:</h3>
+          <fieldset>
+              
+              <p>
+                  <label>Nome:</label>
+                  <input type="text" name="nome" placeholder="Insira o nome" required>
+            </p>
+            <p>
+                <label>Preço:</label>
+                <input type="text" name="preco" placeholder="Insira o preço" required>
+            </p>
+            <p>
+                <label>Quantidade:</label>
+                <input type="text" name="quantidade" placeholder="Quantidade" required>
+            </p>
+            <p>
+                <label>Validade:</label>
+                <input type="date" name="validade" required>
+            </p>
+            
+            <!-- <button type="submit">Inserir</button> <br/> -->
+            <input value="Inserir" name="inserir" type="submit">
+          </fieldset>
+                     
+        </form>
+        <a href="exibirTabela.php"> <button>Tabela de Produtos</button></a>
+
+    </body>
+</html>
