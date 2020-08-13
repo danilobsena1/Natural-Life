@@ -1,20 +1,21 @@
 <style type="text/css">
-    a { 
+    	a { 
         text-decoration: none;
 		background: #4AAE4A;
 		padding: 16px; 
-    }
+    	}
+	
 	body {
 		background-image: url('images/pexels-lukas.jpg');
 		/* Foto de Lukas no Pexels */
-        background-size: cover;
-    }
+        	background-size: cover;
+    	}
+	
 	#menu {
-    	/* background: #12181F; */
     	background: #4AAE4A;
     	padding: 16px;
- 	   	/* margin: auto;    */
-	} 	
+	}
+	
 </style>
 
 <div id="menu">
@@ -29,7 +30,7 @@ error_reporting(E_ALL);
 include('conexao.php'); // inclui o banco de dados a realizar a conexão.
 
 
-	$name = $_POST['nome'];
+    $name = $_POST['nome'];
     $price = $_POST['preco'];
     $amount = $_POST['quantidade'];
     $expirationDate = $_POST['validade'];
